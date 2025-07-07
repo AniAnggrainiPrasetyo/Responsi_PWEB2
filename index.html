@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Daftar Belanja</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Daftar Belanja</h2>
+
+    <!-- Form Tambah Item -->
+    <form id="addForm">
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Nama Item" required>
+      </div>
+      <div class="form-group">
+        <input type="text" name="category" placeholder="Kategori" required>
+      </div>
+      <div class="form-group">
+        <input type="number" name="year" placeholder="Tahun Kadaluwarsa" required>
+      </div>
+      <div class="form-group">
+        <label class="checkbox-label">
+          <input type="checkbox" name="purchased">
+          Sudah dibeli
+        </label>
+      </div>
+      <div class="form-group">
+        <button type="submit">Tambah</button>
+      </div>
+    </form>
+
+    <!-- Form Cari Item -->
+    <form id="searchForm">
+      <input type="text" id="searchInput" placeholder="Cari item berdasarkan nama...">
+      <button type="submit">Cari</button>
+      <button type="button" onclick="resetSearch()">Reset</button>
+    </form>
+
+    <!-- Container Tabel -->
+    <div id="tableContainer"></div>
+
+    <!-- Template Tabel Kategori -->
+    <template id="categoryTemplate">
+      <div class="category-title"></div>
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Tahun</th>
+            <th>Status</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </template>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
